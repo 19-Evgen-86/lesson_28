@@ -6,27 +6,31 @@ from typing import List, Dict, Union, Any
 
 
 def csv_to_json(input_csv, output_json):
+
     result_json: List[Dict] = []
-    result_dict: Dict[str, Union[Union[str, int], Dict]] = {}
+    result_dict: Dict[str, Union[Union[str, int], Dict]]
     with open(input_csv, encoding='utf-8') as file_csv:
         # читаем  csv file  как список словарей
         csv_data = csv.DictReader(file_csv)
         for item in csv_data:
+            result_dict = {}
             if input_csv.split('.')[0] == 'ads':
                 result_dict['model'] = "ads.Ads"
                 result_dict['pk'] = item['id']
                 result_dict['fields'] = {
                     "name": item['name'],
                     "author": item['author'],
-                    "price": item['price'],
+                    "price": int(item['price']),
                     "description": item['description'],
                     "address": item['address'],
-                    "is_published": item['is_published'],
+                    "is_published": item['is_published'].capitalize()
                 }
+
             if input_csv.split('.')[0] == 'categories':
                 result_dict['model'] = "ads.Categories"
                 result_dict['pk'] = item['id']
                 result_dict['fields'] = {"name": item['name']}
+
             result_json.append(result_dict)
 
     with open(output_json, 'w', encoding='utf-8') as file_json:
