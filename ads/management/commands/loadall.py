@@ -11,6 +11,8 @@ class Command(BaseCommand):
     filenames = [
         "ads.json",
         "categories.json",
+        "location.json",
+        'user.json'
     ]
 
     def handle(self, *args, **options):
