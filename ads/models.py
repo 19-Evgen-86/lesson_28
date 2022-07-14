@@ -12,23 +12,7 @@ class Categories(models.Model):
         return self.name
 
 
-class Ads(models.Model):
-    name = models.CharField(max_length=255)
-    author = models.CharField(max_length=100)
-    price = models.IntegerField(default=100)
-    description = models.TextField(default="")
-    address = models.CharField(max_length=255)
-    is_published = models.BooleanField(default=True)
-
-    class Meta:
-        verbose_name = "Объявление"
-        verbose_name_plural = "Объявления"
-
-    def __str__(self):
-        return self.name
-
-
-class Locations(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length=50)
     lat = models.FloatField(null=True)
     lng = models.FloatField(null=True)
@@ -46,8 +30,9 @@ class User(models.Model):
     last_name = models.CharField(max_length=30)
     username = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
+    role = models.CharField(max_length=30, default="Member")
     age = models.SmallIntegerField(null=True)
-    location_id = models.ForeignKey(Locations, on_delete=models.CASCADE, null=True)
+    location_id = models.ForeignKey(Location, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = "Пользователь"
@@ -55,3 +40,21 @@ class User(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+
+class Ads(models.Model):
+    name = models.CharField(max_length=255)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    price = models.IntegerField(default=100, blank=True)
+    description = models.TextField(default="", blank=True)
+    address = models.CharField(max_length=255, blank=True)
+    is_published = models.BooleanField(default=True)
+    categories = models.ManyToManyField(Categories)
+    image = models.ImageField(upload_to='images', blank=True)
+
+    class Meta:
+        verbose_name = "Объявление"
+        verbose_name_plural = "Объявления"
+
+    def __str__(self):
+        return self.name

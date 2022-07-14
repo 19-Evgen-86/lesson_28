@@ -1,130 +1,130 @@
 [
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "1",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Павел",
+            "last_name": "Никифоров",
+            "username": "Pnikifirov",
+            "password": "Gzvptl",
+            "role": "Member",
+            "age": "21",
+            "location_id": "1"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "2",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Альбина",
+            "last_name": "Игнатьева",
+            "username": "Abiba_1341",
+            "password": "4fvql2",
+            "role": "Moderator",
+            "age": "24",
+            "location_id": "3"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "3",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Иван",
+            "last_name": "Сысоев",
+            "username": "Vanya777",
+            "password": "O535pj",
+            "role": "Admin",
+            "age": "29",
+            "location_id": "8"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "4",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Марина",
+            "last_name": "Беркутова",
+            "username": "Orlanfree",
+            "password": "D49rso",
+            "role": "Moderator",
+            "age": "19",
+            "location_id": "10"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "5",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Галина",
+            "last_name": "Иванова",
+            "username": "Galina_ivanova",
+            "password": "Wcqlve",
+            "role": "Member",
+            "age": "41",
+            "location_id": "2"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "6",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Петр",
+            "last_name": "Бойченко",
+            "username": "Petr_bo",
+            "password": "Xur2jf",
+            "role": "Member",
+            "age": "37",
+            "location_id": "4"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "7",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Никита",
+            "last_name": "",
+            "username": "Nikitapro",
+            "password": "Gzp4vr",
+            "role": "Member",
+            "age": "26",
+            "location_id": "7"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "8",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Виолетта",
+            "last_name": "Петушок",
+            "username": "Riverna",
+            "password": "Zo0rj6",
+            "role": "Member",
+            "age": "24",
+            "location_id": "5"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "9",
         "fields": {
-            "first_name": "Борис",
-            "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
-            "age": "35",
-            "location_id": "6"
+            "first_name": "Гульнара",
+            "last_name": "Ибрагимова",
+            "username": "Gulnara321",
+            "password": "Damocl",
+            "role": "Moderator",
+            "age": "22",
+            "location_id": "9"
         }
     },
     {
-        "model": "user.User",
+        "model": "ads.User",
         "pk": "10",
         "fields": {
             "first_name": "Борис",
             "last_name": "Зайка",
-            "username": "dragon84",
-            "password": "sasha123456",
-            "role": "member",
+            "username": "Dragon84",
+            "password": "Sasha123456",
+            "role": "Member",
             "age": "35",
             "location_id": "6"
         }
