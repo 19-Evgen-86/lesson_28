@@ -25,8 +25,7 @@ class UserListView(ListView):
         self.object_list = self.object_list.select_related('location_id').order_by('username')
 
         if request.GET.get('published'):
-            self.object_list = self.object_list.select_related('location_id').order_by('username').filter(
-                ads__is_published=True).annotate(num_ads=Count('ads'))
+            self.object_list = self.object_list.filter(ads__is_published=True).annotate(num_ads=Count('ads'))
 
         paginate: Paginator = Paginator(self.object_list, settings.TOTAL_ON_PAGE)
         page_number: str = request.GET.get('page')
