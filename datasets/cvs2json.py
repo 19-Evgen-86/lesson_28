@@ -17,7 +17,11 @@ def csv_to_json(input_csv, output_json):
             temp_dict = {}
             file_name: str = input_csv.split('.')[0]
 
-            result_dict['model'] = f"ads.{file_name.capitalize()}"
+            if file_name in ['ads', 'categories']:
+                result_dict['model'] = f"ads.{file_name.capitalize()}"
+            if file_name in ['user', 'location']:
+                result_dict['model'] = f"users.{file_name.capitalize()}"
+
             result_dict['pk'] = item['id']
 
             fields = [field_name for field_name in item.keys() if field_name != 'id']
