@@ -1,4 +1,5 @@
 import json
+from collections import defaultdict
 from typing import List, Dict
 
 from django.core.paginator import Paginator
@@ -21,9 +22,11 @@ class UserListView(ListView):
     def get(self, request, *args, **kwargs):
         super().get(request, *args, **kwargs)
 
-        self.object_list = self.object_list.select_related('location_id').order_by('username').filter(
-            ads__is_published=True).annotate(
-            num_ads=Count('ads'))
+        self.object_list = self.object_list.select_related('location_id').order_by('username')
+
+        if request.GET.get('published'):
+            self.object_list = self.object_list.select_related('location_id').order_by('username').filter(
+                ads__is_published=True).annotate(num_ads=Count('ads'))
 
         paginate: Paginator = Paginator(self.object_list, settings.TOTAL_ON_PAGE)
         page_number: str = request.GET.get('page')
@@ -31,18 +34,19 @@ class UserListView(ListView):
 
         user: User
         users_result: List = []
-
+        result_dict: Dict = defaultdict(lambda: 0)
         for user in page:
-            users_result.append({
-                "id": user.id,
-                "first_name": user.first_name,
-                "last_name": user.last_name,
-                "role": user.role,
-                "age": user.age,
-                "location": user.location_id.name,
-                "ads": user.num_ads,
+            result_dict['id'] = user.id
+            result_dict["first_name"] = user.first_name
+            result_dict["last_name"] = user.last_name
+            result_dict["role"] = user.role
+            result_dict["age"] = user.age
+            result_dict["location"]: user.location_id.name
+            if request.GET.get('published'):
+                result_dict['ads'] = user.num_ads
 
-            })
+            users_result.append(dict(result_dict))
+
         response = {
             "items": users_result,
             "num_pages": paginate.num_pages,
@@ -138,7 +142,6 @@ class UserDeleteView(DeleteView):
 
 
 # ----------------------- location --------------------------------------------------------------------------------------
-
 
 @method_decorator(csrf_exempt, name="dispatch")
 class LocListViews(ListView):
