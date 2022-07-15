@@ -1,6 +1,6 @@
 [
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "1",
         "fields": {
             "first_name": "Павел",
@@ -13,7 +13,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "2",
         "fields": {
             "first_name": "Альбина",
@@ -26,7 +26,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "3",
         "fields": {
             "first_name": "Иван",
@@ -39,7 +39,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "4",
         "fields": {
             "first_name": "Марина",
@@ -52,7 +52,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "5",
         "fields": {
             "first_name": "Галина",
@@ -65,7 +65,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "6",
         "fields": {
             "first_name": "Петр",
@@ -78,7 +78,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "7",
         "fields": {
             "first_name": "Никита",
@@ -91,7 +91,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "8",
         "fields": {
             "first_name": "Виолетта",
@@ -104,7 +104,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "9",
         "fields": {
             "first_name": "Гульнара",
@@ -117,7 +117,7 @@
         }
     },
     {
-        "model": "ads.User",
+        "model": "users.User",
         "pk": "10",
         "fields": {
             "first_name": "Борис",

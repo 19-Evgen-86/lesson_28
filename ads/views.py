@@ -216,7 +216,7 @@ class CatViewId(DetailView):
 @method_decorator(csrf_exempt, name="dispatch")
 class CatCreateView(CreateView):
     model = Categories
-
+    fields = ['name']
     def post(self, request, *args, **kwargs):
         cat_data: Dict = json.loads(request.body)
         cat = Categories.objects.create(
@@ -238,7 +238,7 @@ class CatUpdateView(UpdateView):
         cat_data = json.loads(request.body)
 
         self.object.name = cat_data['name']
-
+        self.object.save()
         return JsonResponse({"Message": f"update category with ID = {self.kwargs['pk']} is ok"}, status=201)
 
 

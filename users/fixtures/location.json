@@ -1,6 +1,6 @@
 [
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "1",
         "fields": {
             "name": "Москва, м. студенческая",
@@ -9,7 +9,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "2",
         "fields": {
             "name": "Москва, м. черкизовская",
@@ -18,7 +18,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "3",
         "fields": {
             "name": "Санкт-петербург, м. невский проспект",
@@ -27,7 +27,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "4",
         "fields": {
             "name": "Москва, м. библиотека имени ленина",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "5",
         "fields": {
             "name": "Москва, м. комсомольская",
@@ -45,7 +45,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "6",
         "fields": {
             "name": "Санкт-петербург, м. чернышевская",
@@ -54,7 +54,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "7",
         "fields": {
             "name": "Пушкин, павловское шоссе 23/2",
@@ -63,7 +63,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "8",
         "fields": {
             "name": "Сакнт-петербург, м. балтийская",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "9",
         "fields": {
             "name": "Москва, м. беломорская",
@@ -81,7 +81,7 @@
         }
     },
     {
-        "model": "ads.Location",
+        "model": "users.Location",
         "pk": "10",
         "fields": {
             "name": "Москва, м. электрозаодская",
