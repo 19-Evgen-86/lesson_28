@@ -105,16 +105,18 @@ class UserCreateView(CreateView):
 @method_decorator(csrf_exempt, name="dispatch")
 class UserUpdateView(UpdateView):
     model = User
-    fields = ['password', 'role', 'location_id']
+    fields = ['first_name', 'last_name', 'username', 'password', 'role', 'age', 'location_id']
 
     def patch(self, request, *args, **kwargs):
         super().get(request, *args, *kwargs)
         user_data = json.loads(request.body)
 
+        self.object.first_name = user_data['first_name']
+        self.object.last_name = user_data['last_name']
+        self.object.username = user_data['username']
         self.object.role = user_data['role']
-        loc, _ = Location.objects.get_or_create(name=user_data['location'])
-
-        self.object.location_id = loc
+        self.object.age = user_data['age']
+        self.object.location_id, _ = Location.objects.get_or_create(name=user_data['location'])
 
         if user_data['password']:
             self.object.password = user_data['password']
